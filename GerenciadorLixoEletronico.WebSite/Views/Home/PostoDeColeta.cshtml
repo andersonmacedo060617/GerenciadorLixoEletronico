@@ -1,0 +1,73 @@
+﻿@model IEnumerable<GerenciadorLixoEletronico.NH.Model.PostoDeColeta>
+
+@{
+    ViewBag.Title = "Postos de Coleta";
+}
+
+<h2>Postos de Coleta</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoEstabelecimento)
+        </th>
+        <th>
+            Endereço
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco.Cidade.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco.Cidade.Estado.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco.Cidade.Estado.Pais.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HorarioFuncionamento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in (IList<GerenciadorLixoEletronico.NH.Model.PostoDeColeta>)ViewBag.PostosDeColeta) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoEstabelecimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco.Rua) , 
+            @Html.DisplayFor(modelItem=> item.Endereco.Numero),
+            @Html.DisplayFor(modelItem => item.Endereco.Complemento) - 
+            @Html.DisplayFor(modelItem => item.Endereco.CEP) - 
+            @Html.DisplayFor(modelItem => item.Endereco.Bairro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco.Cidade.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco.Cidade.Estado.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco.Cidade.Estado.Pais.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HorarioFuncionamento)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,4 +1,6 @@
-﻿using NHibernate;
+﻿using GerenciadorLixoEletronico.NH.Model;
+using GerenciadorLixoEletronico.NH.Repository;
+using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Cfg.MappingSchema;
 using NHibernate.Context;
@@ -13,11 +15,11 @@ using System.Web;
 
 namespace GerenciadorLixoEletronico.NH.Config
 {
-    class ConfigDB
+    public class ConfigDB
     {
         public static string StringConexao =
-            "Persist Security Info=False;server=localhost;port=3306;" +
-            "database=MountainStyleShop;uid=root;pwd=root";
+            "Persist Security Info=False;server=192.168.11.200;port=3306;" +
+            "database=GerenciadorLixoEletronico;uid=root;pwd=root";
 
         private ISessionFactory SessionFactory;
 
@@ -37,17 +39,25 @@ namespace GerenciadorLixoEletronico.NH.Config
 
 
 
-        //public ProdutoRepository ProdutoRepository { get; set; }
-        //public UsuarioRepository UsuarioRepository { get; set; }
-        //public CategoriaRepository CategoriaRepository { get; set; }
+        public CidadeRepository CidadeRepository { get; set; }
+        public EnderecoRepository EnderecoRepository { get; set; }
+        public EstadoRepository EstadoRepository { get; set; }
+        public PaisRepository PaisRepository { get; set; }
+        public PostoDeColetaRepository PostoDeColetaRepository { get; set; }
+        public UsuarioRepository UsuarioRepository { get; set; }
+        public SolicitacaoDeColetaRepository SolicitacaoDeColetaRepository { get; set; }
 
         public ConfigDB()
         {
             if (Conexao())
             {
-                //this.ProdutoRepository = new ProdutoRepository(Session);
-                //this.UsuarioRepository = new UsuarioRepository(Session);
-                //this.CategoriaRepository = new CategoriaRepository(Session);
+                this.CidadeRepository = new CidadeRepository(Session);
+                this.EnderecoRepository = new EnderecoRepository(Session);
+                this.EstadoRepository = new EstadoRepository(Session);
+                this.PaisRepository = new PaisRepository(Session);
+                this.PostoDeColetaRepository = new PostoDeColetaRepository(Session);
+                this.UsuarioRepository = new UsuarioRepository(Session);
+                this.SolicitacaoDeColetaRepository = new SolicitacaoDeColetaRepository(Session);
             }
         }
 
@@ -108,9 +118,26 @@ namespace GerenciadorLixoEletronico.NH.Config
                 var mapper = new ModelMapper();
 
                 mapper.AddMappings(
-                    //Assembly.GetAssembly(typeof(UsuarioMap)).GetTypes()
+                    Assembly.GetAssembly(typeof(CidadeMap)).GetTypes()
                 );
-
+                mapper.AddMappings(
+                    Assembly.GetAssembly(typeof(EstadoMap)).GetTypes()
+                );
+                mapper.AddMappings(
+                    Assembly.GetAssembly(typeof(EnderecoMap)).GetTypes()
+                );
+                mapper.AddMappings(
+                    Assembly.GetAssembly(typeof(PaisMap)).GetTypes()
+                );
+                mapper.AddMappings(
+                    Assembly.GetAssembly(typeof(PostoDeColetaMap)).GetTypes()
+                );
+                mapper.AddMappings(
+                    Assembly.GetAssembly(typeof(UsuarioRepository)).GetTypes()
+                );
+                mapper.AddMappings(
+                    Assembly.GetAssembly(typeof(SolicitacaoDeColetaRepository)).GetTypes()
+                );
                 return mapper.CompileMappingForAllExplicitlyAddedEntities();
             }
             catch (Exception)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GerenciadorLixoEletronico.NH.Config;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,17 +14,14 @@ namespace GerenciadorLixoEletronico.WebSite.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult PostoDeColeta()
         {
-            ViewBag.Message = "Your application description page.";
-
+            ViewBag.PostosDeColeta = ConfigDB.Instance.PostoDeColetaRepository.GetAll();
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult SolicitaColeta()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

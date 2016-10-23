@@ -1,0 +1,14 @@
+﻿#painelImg .item{
+    width:100%;
+    height:350px;
+}
+
+#painelImg{
+    width: 100%;
+    height:100%;
+}
+
+#painelImg img{
+    width:100%;
+    height:350px;
+}
