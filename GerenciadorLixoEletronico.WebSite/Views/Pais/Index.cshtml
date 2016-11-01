@@ -1,0 +1,33 @@
+﻿@model IEnumerable<GerenciadorLixoEletronico.NH.Model.Pais>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdministradorLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Novo")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Alterar", new { id=item.Id }) |
+            @Html.ActionLink("Apagar", "ConfirmaDelete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

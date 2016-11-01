@@ -150,7 +150,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministracaoController.cs" />
     <Compile Include="Controllers\CidadeController.cs" />
+    <Compile Include="Controllers\EstadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PaisController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -212,10 +214,15 @@
     <Content Include="Views\Home\SolicitaColeta.cshtml" />
     <Content Include="Views\Shared\_AdministradorLayout.cshtml" />
     <Content Include="Views\Administracao\Index.cshtml" />
+    <Content Include="Views\Pais\Index.cshtml" />
+    <Content Include="Views\Pais\Alterar.cshtml" />
+    <Content Include="Views\Pais\ConfirmaDelete.cshtml" />
+    <Content Include="Views\Pais\Novo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Cidade\" />
+    <Folder Include="Views\Estado\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
