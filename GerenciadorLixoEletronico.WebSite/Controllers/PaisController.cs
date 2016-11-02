@@ -44,7 +44,7 @@ namespace GerenciadorLixoEletronico.WebSite.Controllers
         public ActionResult ConfirmaDelete(int id)
         {
             var pais = ConfigDB.Instance.PaisRepository.GetAll().FirstOrDefault(x => x.Id == id);
-            if(pais != null)
+            if(pais != null && pais.Estados.Count == 0)
             {
                 return View(pais);
             }
@@ -67,6 +67,17 @@ namespace GerenciadorLixoEletronico.WebSite.Controllers
         public ActionResult Novo()
         {
             return View();
+        }
+
+        public ActionResult Visualizar(int id)
+        {
+            var pais = ConfigDB.Instance.PaisRepository.GetAll().FirstOrDefault(x => x.Id == id);
+            if(pais != null)
+            {
+                return View(pais);
+            }
+            
+            return RedirectToAction("Index");
         }
     }
 }

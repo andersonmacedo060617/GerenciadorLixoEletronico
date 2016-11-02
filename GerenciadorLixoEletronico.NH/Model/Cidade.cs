@@ -21,6 +21,8 @@ namespace GerenciadorLixoEletronico.NH.Model
         [Required(ErrorMessage = "O estado é obrigatorio.")]
         public virtual Estado Estado { get; set; }
 
+        public virtual IList<Endereco> Enderecos { get; set; }
+
     }
 
     public class CidadeMap : ClassMapping<Cidade>
@@ -40,6 +42,16 @@ namespace GerenciadorLixoEletronico.NH.Model
             {
                 m.Column("IdEstado");
             });
+
+            Bag<Endereco>(x => x.Enderecos, m =>
+            {
+                m.Cascade(Cascade.All);
+                m.Lazy(CollectionLazy.Lazy);
+                m.Inverse(true);
+                m.Key(k => k.Column("IdCidade"));
+            },
+                r => r.OneToMany()
+            );
         }
     }
 }

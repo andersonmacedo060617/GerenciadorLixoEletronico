@@ -218,11 +218,19 @@
     <Content Include="Views\Pais\Alterar.cshtml" />
     <Content Include="Views\Pais\ConfirmaDelete.cshtml" />
     <Content Include="Views\Pais\Novo.cshtml" />
+    <Content Include="Views\Estado\Index.cshtml" />
+    <Content Include="Views\Estado\Alterar.cshtml" />
+    <Content Include="Views\Estado\Novo.cshtml" />
+    <Content Include="Views\Estado\ConfirmaDelete.cshtml" />
+    <Content Include="Views\Pais\Visualizar.cshtml" />
+    <Content Include="Views\Cidade\Index.cshtml" />
+    <Content Include="Views\Cidade\Novo.cshtml" />
+    <Content Include="Views\Cidade\Alterar.cshtml" />
+    <Content Include="Views\Cidade\ConfirmaDelete.cshtml" />
+    <Content Include="Views\Cidade\Visualizar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Cidade\" />
-    <Folder Include="Views\Estado\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

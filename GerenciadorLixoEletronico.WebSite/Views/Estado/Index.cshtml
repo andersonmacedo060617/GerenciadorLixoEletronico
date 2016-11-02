@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GerenciadorLixoEletronico.NH.Model.Pais>
+﻿@model IEnumerable<GerenciadorLixoEletronico.NH.Model.Estado>
 
 @{
     ViewBag.Title = "Index";
@@ -15,6 +15,10 @@
         <th>
             @Html.DisplayNameFor(model => model.Nome)
         </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Pais)
+        </th>
         <th></th>
     </tr>
 
@@ -24,11 +28,13 @@
             @Html.DisplayFor(modelItem => item.Nome)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Pais.Nome)
+        </td>
+        <td>
             @Html.ActionLink("Visualizar", "Visualizar", new { id = item.Id }) |
-            @Html.ActionLink("Alterar", "Alterar", new { id=item.Id }) 
-            @if(item.Estados.Count ==0) {
-                
-                @Html.ActionLink("Apagar", "ConfirmaDelete", new { id=item.Id })
+            @Html.ActionLink("Alterar", "Alterar", new { id = item.Id })| 
+            @if (item.Cidades.Count == 0) {
+                @Html.ActionLink("Apagar", "ConfirmaDelete", new { id = item.Id })
             }
         </td>
     </tr>

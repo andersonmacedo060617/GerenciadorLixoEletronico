@@ -17,6 +17,7 @@ namespace GerenciadorLixoEletronico.NH.Config
 {
     public class ConfigDB
     {
+        //192.168.11.200
         public static string StringConexao =
             "Persist Security Info=False;server=192.168.11.200;port=3306;" +
             "database=GerenciadorLixoEletronico;uid=root;pwd=root";

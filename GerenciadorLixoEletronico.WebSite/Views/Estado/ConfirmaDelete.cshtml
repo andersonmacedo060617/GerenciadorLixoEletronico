@@ -1,0 +1,35 @@
+﻿@model GerenciadorLixoEletronico.NH.Model.Estado
+
+@{
+    ViewBag.Title = "ConfirmaDelete";
+    Layout = "~/Views/Shared/_AdministradorLayout.cshtml";
+}
+
+<h2>Deseja realmente apagar o registro?</h2>
+
+<div>
+    <h4>Estado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pais.Nome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Excluir", "Excluir", new { id = Model.Id }) |
+    @Html.ActionLink("Cancelar", "Index")
+</p>

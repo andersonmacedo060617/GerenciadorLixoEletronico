@@ -1,4 +1,5 @@
-﻿using NHibernate.Mapping.ByCode;
+﻿using NHibernate.Mapping;
+using NHibernate.Mapping.ByCode;
 using NHibernate.Mapping.ByCode.Conformist;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,13 @@ namespace GerenciadorLixoEletronico.NH.Model
         [Display(Name = "Nome do País")]
         [Required(ErrorMessage = "O nome do país é obrigatorio.")]
         public virtual string Nome { get; set; }
+
+        public virtual IList<Estado> Estados { get; set; }
         
+        public Pais()
+        {
+            Estados = new List<Estado>();
+        }
     }
 
     public class PaisMap: ClassMapping<Pais>
@@ -34,8 +41,17 @@ namespace GerenciadorLixoEletronico.NH.Model
               });
 
             Property<string>(x => x.Nome);
+
+            Bag<Estado>(x => x.Estados, m =>
+            {
+                m.Cascade(Cascade.All);
+                m.Lazy(CollectionLazy.Lazy);
+                m.Inverse(true);
+                m.Key(k => k.Column("IdPais"));
+            },
+                r => r.OneToMany()
+            );
         }
-
-
+        
     }
 }

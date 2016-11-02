@@ -1,0 +1,53 @@
+﻿@model GerenciadorLixoEletronico.NH.Model.Pais
+
+@{
+    ViewBag.Title = "Visualizar";
+    Layout = "~/Views/Shared/_AdministradorLayout.cshtml";
+}
+
+<h2>Visualizar</h2>
+
+<div>
+    <h4>Pais</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+    </dl>
+
+    <hr />
+
+    <h4>Estados deste país</h4>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Estados)
+            </th>
+
+            
+        </tr>
+
+        @foreach (var item in Model.Estados)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                
+            </tr>
+        }
+
+    </table>
+</div>
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

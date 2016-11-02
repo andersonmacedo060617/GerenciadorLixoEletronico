@@ -21,6 +21,13 @@ namespace GerenciadorLixoEletronico.NH.Model
         [Required(ErrorMessage = "O país é obrigatorio.")]
         public virtual Pais Pais { get; set; }
 
+        public virtual IList<Cidade> Cidades { get; set; }
+
+        public Estado()
+        {
+            Cidades = new List<Cidade>();
+        }
+
     }
 
     public class EstadoMap : ClassMapping<Estado>
@@ -37,9 +44,19 @@ namespace GerenciadorLixoEletronico.NH.Model
             Property<string>(x => x.Nome);
 
             ManyToOne<Pais>(x => x.Pais, m =>
-              {
-                  m.Column("IdPais");
-              });
+            {
+                m.Column("IdPais");
+            });
+
+            Bag<Cidade>(x => x.Cidades, m =>
+            {
+                m.Cascade(Cascade.All);
+                m.Lazy(CollectionLazy.Lazy);
+                m.Inverse(true);
+                m.Key(k => k.Column("idEstado"));
+            },
+                r => r.OneToMany()
+            );
         }
     }
 }
