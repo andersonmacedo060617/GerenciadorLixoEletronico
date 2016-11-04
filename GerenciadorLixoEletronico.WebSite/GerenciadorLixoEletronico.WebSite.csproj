@@ -166,6 +166,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Imagem\Imagem1.jpg" />
+    <Content Include="Imagem\imgTabela.png" />
     <Content Include="Imagem\logo-lixo-eletronico.png" />
     <Content Include="Imagem\Painel\img00.jpg" />
     <Content Include="Imagem\Painel\img01.jpg" />
@@ -177,6 +179,7 @@
     <Content Include="Imagem\Painel\img07.jpg" />
     <Content Include="Imagem\Painel\img08.png" />
     <Content Include="Imagem\Painel\img09.jpg" />
+    <Content Include="Imagem\vianna.png" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="Scripts\bootstrap.js" />
