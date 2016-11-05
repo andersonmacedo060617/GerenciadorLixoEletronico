@@ -42,6 +42,7 @@ namespace GerenciadorLixoEletronico.WebSite.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Gravar(Cidade cidade)
         {
             ModelState.Remove("Estado.Nome");

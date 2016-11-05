@@ -23,6 +23,10 @@ namespace GerenciadorLixoEletronico.NH.Model
 
         public virtual IList<Endereco> Enderecos { get; set; }
 
+        
+        [Display(Name = "Localização Cidade Google Maps.")]
+        public virtual string LocalizacaoMap { get; set; }
+
     }
 
     public class CidadeMap : ClassMapping<Cidade>
@@ -37,6 +41,10 @@ namespace GerenciadorLixoEletronico.NH.Model
             });
 
             Property<string>(x => x.Nome);
+            
+            Property<string>(x => x.LocalizacaoMap, x=>x.Length(1000));
+            
+            
 
             ManyToOne<Estado>(x => x.Estado, m =>
             {

@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="wrapper">
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -17,11 +17,11 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="@Url.Action("Index","Home")">
-                    <img src="~/Imagem/logo-lixo-eletronico.png" width='200px' height="60px" />
+                    <img src="~/Imagem/vianna.png" style="background-color:#ffffff" width='200px' height="60px" />
                 </a>
             </div>
             
-            <div class="nav navbar-right top-nav">
+            <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li class="dropdown">

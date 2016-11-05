@@ -34,7 +34,19 @@
         <dd>
             @Html.DisplayFor(model => model.Estado.Pais.Nome)
         </dd>
-    </dl>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocalizacaoMap)
+        </dt>
+        <dd>
+            @Html.Raw(@Model.LocalizacaoMap)
+        </dd>
+
+
+
+
+</dl>
+    
 </div>
 <p>
     @Html.ActionLink("Alterar", "Alterar", new { id = Model.Id }) |

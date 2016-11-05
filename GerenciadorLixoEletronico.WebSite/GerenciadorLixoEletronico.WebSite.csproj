@@ -153,6 +153,7 @@
     <Compile Include="Controllers\EstadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PaisController.cs" />
+    <Compile Include="Controllers\PostoDeColetaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -231,6 +232,7 @@
     <Content Include="Views\Cidade\Alterar.cshtml" />
     <Content Include="Views\Cidade\ConfirmaDelete.cshtml" />
     <Content Include="Views\Cidade\Visualizar.cshtml" />
+    <Content Include="Views\PostoDeColeta\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<GerenciadorLixoEletronico.NH.Model.PostoDeColeta>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdministradorLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoEstabelecimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HorarioFuncionamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco.Cidade.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco.Cidade.Estado.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco.Cidade.Estado.Pais.Nome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoEstabelecimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HorarioFuncionamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco.Bairro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco.Cidade.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco.Cidade.Estado.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco.Cidade.Estado.Pais)
+        </td>
+        <td>
+            @Html.ActionLink("Visualizar", "Visualizar", new { id = item.Id }) |
+            @Html.ActionLink("Alterar", "Alterar", new { id = item.Id })
+            @Html.ActionLink("Apagar", "ConfirmaDelete", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>
