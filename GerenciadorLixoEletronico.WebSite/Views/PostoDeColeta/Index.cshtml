@@ -8,7 +8,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Novo", "NovoP1")
 </p>
 <table class="table">
     <tr>
@@ -25,13 +25,13 @@
             @Html.DisplayNameFor(model => model.Endereco)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Endereco.Cidade.Nome)
+            @Html.DisplayNameFor(model => model.Endereco.Cidade)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Endereco.Cidade.Estado.Nome)
+            @Html.DisplayNameFor(model => model.Endereco.Cidade.Estado)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Endereco.Cidade.Estado.Pais.Nome)
+            @Html.DisplayNameFor(model => model.Endereco.Cidade.Estado.Pais)
         </th>
         <th></th>
     </tr>
@@ -57,7 +57,7 @@
             @Html.DisplayFor(modelItem => item.Endereco.Cidade.Estado.Nome)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Endereco.Cidade.Estado.Pais)
+            @Html.DisplayFor(modelItem => item.Endereco.Cidade.Estado.Pais.Nome)
         </td>
         <td>
             @Html.ActionLink("Visualizar", "Visualizar", new { id = item.Id }) |

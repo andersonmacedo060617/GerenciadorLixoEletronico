@@ -18,6 +18,7 @@ namespace GerenciadorLixoEletronico.NH.Repository
 
         public IList<Cidade> GetAll()
         {
+            session.Clear();
             var cidades = this.session.CreateCriteria<Cidade>().List<Cidade>();
             return cidades;
         }

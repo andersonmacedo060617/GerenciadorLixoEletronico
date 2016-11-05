@@ -233,6 +233,10 @@
     <Content Include="Views\Cidade\ConfirmaDelete.cshtml" />
     <Content Include="Views\Cidade\Visualizar.cshtml" />
     <Content Include="Views\PostoDeColeta\Index.cshtml" />
+    <Content Include="Views\PostoDeColeta\NovoP1.cshtml" />
+    <Content Include="Views\PostoDeColeta\NovoP2.cshtml" />
+    <Content Include="Views\PostoDeColeta\NovoPosto.cshtml" />
+    <Content Include="Views\PostoDeColeta\Visualizar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -49,6 +49,7 @@ namespace GerenciadorLixoEletronico.NH.Model
             ManyToOne<Estado>(x => x.Estado, m =>
             {
                 m.Column("IdEstado");
+                
             });
 
             Bag<Endereco>(x => x.Enderecos, m =>

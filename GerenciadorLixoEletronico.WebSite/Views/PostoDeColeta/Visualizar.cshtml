@@ -1,0 +1,111 @@
+﻿@model GerenciadorLixoEletronico.NH.Model.PostoDeColeta
+
+@{
+    ViewBag.Title = "Visualizar";
+    Layout = "~/Views/Shared/_AdministradorLayout.cshtml";
+}
+
+<h2>Visualizar</h2>
+
+<div>
+    <h4>PostoDeColeta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoEstabelecimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoEstabelecimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HorarioFuncionamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HorarioFuncionamento)
+        </dd>
+
+        
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco.Rua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco.Rua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco.Numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco.Numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco.Bairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco.Bairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco.CEP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco.CEP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco.Cidade.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco.Cidade.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco.Cidade.Estado.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco.Cidade.Estado.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco.Cidade.Estado.Pais.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco.Cidade.Estado.Pais.Nome)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocalizacaoMap)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.LocalizacaoMap)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
