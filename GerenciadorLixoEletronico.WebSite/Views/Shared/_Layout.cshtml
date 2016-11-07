@@ -30,20 +30,12 @@
                                 <a href="@Url.Action("Index")"><i class="glyphicon glyphicon-home"></i> Pagina Principal</a>
                             </li>
                             <li class="divider"></li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-wrench"></i>Serviços On Line <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li>@Html.ActionLink("Postos de Coleta", "PostoDeColeta", "Home")</li>
-                                    <li>@Html.ActionLink("Solicitação de Coleta", "SolicitaColeta", "Home")</li>
-                                </ul>
-                            </li>
                             <li>
-                                <a href="@Url.Action("Sobre")"><i class="glyphicon glyphicon-list-alt"></i> Sobre o Sistema</a>
+                                <a href="@Url.Action("PostoDeColeta")"><i class="glyphicon glyphicon-wrench"></i> Posto de Coleta   </a>
                             </li>
+                           
                             <li class="divider"></li>
-                            <li>
-                                <a href="@Url.Action("Index", "Administracao")"><i class="glyphicon glyphicon-cog"></i> Administração do Sistema</a>
-                            </li>
+                            
                         </ul>
                     </div>
                 }
@@ -55,20 +47,14 @@
                                 <a href="@Url.Action("Index")"><i class="glyphicon glyphicon-home"></i> Pagina Principal</a>
                             </li>
                             <li class="divider"></li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-wrench"></i>Serviços On Line <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li>@Html.ActionLink("Postos de Coleta", "PostoDeColeta", "Home")</li>
-                                    <li>@Html.ActionLink("Solicitação de Coleta", "SolicitaColeta", "Home")</li>
-                                </ul>
+                           <li>
+                                <a href="@Url.Action("PostoDeColeta")"><i class="glyphicon glyphicon-wrench"></i> Posto de Coleta   </a>
                             </li>
-                            <li>
-                                <a href="@Url.Action("Sobre")"><i class="glyphicon glyphicon-list-alt"></i> Sobre o Sistema</a>
-                            </li>
+                           
                             <li class="divider"></li>
-                            <li>
+                            @*<li>
                                 <a href="@Url.Action("Administracao")"><i class="glyphicon glyphicon-cog"></i> Administração do Sistema</a>
-                            </li>
+                            </li>*@
                         </ul>
                     </div>
                 }
@@ -80,7 +66,7 @@
             @RenderBody()
             <hr />
             <footer>
-                <p>&copy; @DateTime.Now.Year - Anderson Macedo Desenvolvimentos</p>
+                <p>&copy; @DateTime.Now.Year</p>
             </footer>
         </div>
     

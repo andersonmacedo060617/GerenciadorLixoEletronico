@@ -51,7 +51,6 @@ namespace GerenciadorLixoEletronico.NH.Model
             Bag<Cidade>(x => x.Cidades, m =>
             {
                 m.Cascade(Cascade.All);
-                m.Lazy(CollectionLazy.Lazy);
                 m.Inverse(true);
                 m.Key(k => k.Column("idEstado"));
             },

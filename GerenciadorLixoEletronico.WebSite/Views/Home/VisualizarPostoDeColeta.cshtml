@@ -1,14 +1,14 @@
 ﻿@model GerenciadorLixoEletronico.NH.Model.PostoDeColeta
 
 @{
-    ViewBag.Title = "Visualizar";
-    Layout = "~/Views/Shared/_AdministradorLayout.cshtml";
+    ViewBag.Title = "VisualizarPostoDeColeta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Visualizar</h2>
 
 <div>
-    <h4>PostoDeColeta</h4>
+    <h4>Posto de Coleta</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -36,8 +36,8 @@
             @Html.DisplayFor(model => model.HorarioFuncionamento)
         </dd>
 
-        
-        
+
+
         <dt>
             @Html.DisplayNameFor(model => model.Endereco.Rua)
         </dt>
@@ -106,6 +106,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "PostoDeColeta")
+    
+    @Html.ActionLink("Voltar", "Index")
 </p>

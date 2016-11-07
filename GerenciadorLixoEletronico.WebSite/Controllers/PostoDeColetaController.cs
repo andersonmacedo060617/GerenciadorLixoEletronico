@@ -53,8 +53,12 @@ namespace GerenciadorLixoEletronico.WebSite.Controllers
         public ActionResult Gravar(PostoDeColeta posto)
         {
             posto.Endereco.Cidade = ConfigDB.Instance.CidadeRepository.GetAll().FirstOrDefault(x => x.Id == posto.Endereco.Cidade.Id);
+            posto.Endereco.Estado = posto.Endereco.Cidade.Estado.Nome;
+            posto.Endereco.Pais = posto.Endereco.Cidade.Estado.Pais.Nome;
+
             ConfigDB.Instance.EnderecoRepository.Gravar(posto.Endereco);
             ConfigDB.Instance.PostoDeColetaRepository.Gravar(posto);
+
 
             return RedirectToAction("Index"); 
         }  
@@ -62,11 +66,37 @@ namespace GerenciadorLixoEletronico.WebSite.Controllers
         public ActionResult Visualizar(int id)
         {
             var posto = ConfigDB.Instance.PostoDeColetaRepository.GetAll().FirstOrDefault(x => x.Id == id);
-
+            
             if(posto != null)
             {
+                
                 return View(posto);
             }
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult ConfirmaDelete(int id)
+        {
+            var posto = ConfigDB.Instance.PostoDeColetaRepository.GetAll().FirstOrDefault(x => x.Id == id);
+            if(posto != null)
+            {
+               return View(posto);
+            }
+
+            return RedirectToAction("Index");
+
+        }
+
+        public ActionResult Excluir(int id)
+        {
+            var posto = ConfigDB.Instance.PostoDeColetaRepository.GetAll().FirstOrDefault(x => x.Id == id);
+
+            if (posto != null)
+            {
+                ConfigDB.Instance.EnderecoRepository.Excluir(posto.Endereco);
+                ConfigDB.Instance.PostoDeColetaRepository.Excluir(posto);
+            }
+
             return RedirectToAction("Index");
         }
     }

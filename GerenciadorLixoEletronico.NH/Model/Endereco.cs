@@ -34,7 +34,8 @@ namespace GerenciadorLixoEletronico.NH.Model
         [Required(ErrorMessage = "A cidade é obrigatoria.")]
         public virtual Cidade Cidade { get; set; }
         
-
+        public virtual String Estado { get; set; }
+        public virtual String Pais { get; set; }
     }
 
     public class EnderecoMap : ClassMapping<Endereco>

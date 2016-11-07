@@ -1,0 +1,51 @@
+﻿@model GerenciadorLixoEletronico.NH.Model.PostoDeColeta
+
+@{
+    ViewBag.Title = "ConfirmaDelete";
+    Layout = "~/Views/Shared/_AdministradorLayout.cshtml";
+}
+
+<h2>ConfirmaDelete</h2>
+
+<div>
+    <h4>PostoDeColeta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoEstabelecimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoEstabelecimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HorarioFuncionamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HorarioFuncionamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocalizacaoMap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocalizacaoMap)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Apagar", "Excluir", new { id = Model.Id }) |
+    @Html.ActionLink("Cancelar", "Index")
+</p>

@@ -52,15 +52,7 @@ namespace GerenciadorLixoEletronico.NH.Model
                 
             });
 
-            Bag<Endereco>(x => x.Enderecos, m =>
-            {
-                m.Cascade(Cascade.All);
-                m.Lazy(CollectionLazy.Lazy);
-                m.Inverse(true);
-                m.Key(k => k.Column("IdCidade"));
-            },
-                r => r.OneToMany()
-            );
+           
         }
     }
 }

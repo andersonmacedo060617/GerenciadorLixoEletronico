@@ -24,5 +24,17 @@ namespace GerenciadorLixoEletronico.WebSite.Controllers
         {
             return View();
         }
+
+        public ActionResult VisualizarPostoDeColeta(int id)
+        {
+            var posto = ConfigDB.Instance.PostoDeColetaRepository.GetAll().FirstOrDefault(x => x.Id == id);
+
+            if (posto != null)
+            {
+
+                return View(posto);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
